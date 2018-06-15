@@ -2,7 +2,7 @@
 
 import express from "express";
 import bodyParser from "body-parser";
-import morgan from "morgan";
+import nodemailer from "nodemailer";
 
 // Sets up the Express app
 const PORT = process.env.PORT || 8080;
