@@ -10,6 +10,7 @@
                 <div class="col s4">
                     <h5 class="center-align contact">
                         <button data-target="modal1" class="btn modal-trigger">Contact Me</button>
+                        {{ msg }}
                     </h5>
                 </div>
                 <div class="col s4"></div>
@@ -74,28 +75,40 @@
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4 class="header2">Email Me!</h4>
         <div class="row">
             <div class="col s12">
                 <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" id="name-input" class="name">
-                        <label for="name-input">Name</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input type="text" id="email-input" class="email">
-                        <label for="email-input">Email</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input type="text" id="comment-input" class="comment">
-                        <label for="comment-input">Comment</label>
-                    </div>
+                    <div class="contact">
+                        <h3>Email Me</h3>
+                        <form method="POST" action="send">
+                        <p>
+                            <label>Name</label>
+                            <input type="text" name="name">
+                        </p>
+                        <p>
+                            <label>Company</label>
+                            <input type="text" name="company">
+                        </p>
+                        <p>
+                            <label>Email Address</label>
+                            <input type="email" name="email">
+                        </p>
+                        <p>
+                            <label>Phone Number</label>
+                            <input type="text" name="phone">
+                        </p>
+                        <p class="full">
+                            <label>Message</label>
+                            <textarea name="message" rows="5"></textarea>
+                        </p>
+                        <p class="full">
+                            <button type="submit">Submit</button>
+                        </p>
+                        </form>
+                    </div>                    
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal-footer">
-        <a class="modal-close waves-effect waves-red btn-flat"><button type"submit">Submit</button></a>
     </div>
 </div>
 
