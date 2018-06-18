@@ -3,12 +3,12 @@ import express from "express";
 const router = express.Router();
 
 router.get('/', function(req, res) {
-    res.render('home');
+    res.render('none');
 });
 
-// router.get('/cast', function(req, res) {
-//     res.render('cast');
-// });
+router.get('/contact', function(req, res) {
+    res.render('contact');
+});
 
 // router.get('/merch', function(req, res) {
 //     res.render('merch');

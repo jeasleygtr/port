@@ -2,7 +2,7 @@
 
 import express from "express";
 import bodyParser from "body-parser";
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 
 // Sets up the Express app
 const PORT = process.env.PORT || 8080;
@@ -34,7 +34,7 @@ app.use(function(req, res, next){
     return;
 });
 
-app.post('/send', (req, res) => {
+app.post('/home', (req, res) => {
     // console.log(req.body);
     const output = `
     <p>You have a new contact request</p>
@@ -80,7 +80,7 @@ app.post('/send', (req, res) => {
       console.log('Message sent: %s', info.messageId);
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
   
-      res.redirect('home', {msg:'Email has been sent'});
+      res.redirect('/home', {msg:'Email has been sent'});
   });
   });
 
